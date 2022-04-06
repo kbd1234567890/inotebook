@@ -1,14 +1,20 @@
+
 const connectToMongo = require('./db');
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 4000
 
 connectToMongo();
 
+//Available routes
+
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/notes', require('./routes/notes'));
+
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello Kanifanath!');
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}/`)
+  console.log(`inotebook Server listening at http://localhost:${port}/`)
 })
