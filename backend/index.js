@@ -6,6 +6,7 @@ const port = 4000
 
 connectToMongo();
 
+// To read json sent as a request
 app.use(express.json());
 
 //Available routes
